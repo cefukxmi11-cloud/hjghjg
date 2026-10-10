@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07153d">
+<meta name="description" content="傳說對決十週年演唱會活動展示頁">
+<title>傳說對決｜十週年演唱會</title>
+<style>
+:root{--gold:#f1d17c;--gold2:#d89b3f;--blue:#7edcff;--line:#527da8;--muted:#a5c0df}
+*{box-sizing:border-box}
+html{min-height:100%;background:#06102e}
+body{margin:0;min-height:100vh;color:#f7f7fb;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;background:radial-gradient(ellipse at 50% 8%,#234a91 0,#10285c 29%,#07183f 57%,#050b20 100%);background-attachment:fixed;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(circle,#a8cfff 0.7px,transparent 1px),radial-gradient(circle,#9bcaff .65px,transparent 1px);background-size:80px 80px,137px 137px;background-position:8px 11px,31px 54px;opacity:.72}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% 50%,transparent 15%,#03091b77 100%)}
+.wrap{position:relative;z-index:1;width:min(290px,calc(100% - 28px));margin:0 auto}
+header{text-align:center;padding:10px 0 0}
+.brand{font-size:8px;letter-spacing:.25em;font-weight:900;color:#f5df9b}
+.brand-name{font-size:14px;letter-spacing:.12em;font-weight:900;margin-top:6px;text-shadow:0 0 15px #c8dcff55}
+.brand-pill{display:inline-block;border:1px solid #c9b87999;border-radius:20px;padding:3px 11px;margin-top:6px;font-size:5px;letter-spacing:.18em;color:#e7d9a8}
+.anniv{margin-top:9px;font-size:6px;letter-spacing:.5em;color:#b9d4ff;font-weight:800}
+h1{font-size:25px;line-height:1.2;letter-spacing:.1em;margin:4px 0 4px;color:#f6dc8b;text-shadow:0 0 16px #e4b85a55}
+.tagline{font-size:6px;letter-spacing:.25em;color:#d5dff1}
+.title-rule{height:1px;margin:8px 4px 12px;background:linear-gradient(90deg,transparent,#8bd9ff99,#f4d98b,transparent)}
+.panel{border:1px solid #527ca4;border-radius:15px;background:linear-gradient(150deg,#10295bdf,#071735f2);box-shadow:0 9px 35px #0003,inset 0 0 25px #4684bd12;margin-bottom:9px;overflow:hidden}
+.event-panel{padding:12px 11px 13px}
+.eyebrow{font-size:6px;letter-spacing:.28em;color:#a7dfff;font-weight:800}
+.panel-title{font-size:13px;font-weight:800;margin-top:6px;letter-spacing:.03em}
+.date-box{margin-top:17px;border:1px solid #527ca4;border-radius:10px;background:linear-gradient(110deg,#173b79,#17274e);padding:10px 6px;text-align:center;box-shadow:inset 0 0 20px #9ad5ff0b}
+.date-label{font-size:6px;letter-spacing:.34em;color:#a5c8ed}
+.date{font-size:19px;letter-spacing:.06em;font-weight:900;color:#f8e9ae;margin-top:4px}
+.date span{color:#83dcff;margin:0 5px}
+.date-note{text-align:center;font-size:6px;color:#c1cce1;line-height:1.8;margin-top:8px}
+.reward-panel{padding:12px 11px 11px}
+.section-title{text-align:center}
+.section-title .eyebrow{letter-spacing:.38em}
+.section-title h2{font-size:20px;letter-spacing:.28em;margin:6px 0 2px;color:#f8e6a6}
+.section-title .sub{font-size:6px;color:#a9c4e6;letter-spacing:.22em;margin-bottom:12px}
+.list{display:grid;gap:5px}
+.skin{width:100%;min-height:45px;display:grid;grid-template-columns:28px 1fr 20px;align-items:center;gap:7px;text-align:left;padding:6px 8px;border:1px solid #416a9b;border-radius:9px;background:linear-gradient(110deg,#102e66,#0c1b3d);color:#f6f8ff;cursor:pointer;transition:.16s}
+.skin:hover{border-color:#7fdfff;background:linear-gradient(110deg,#173b7a,#10234a)}
+.skin[aria-pressed="true"]{border-color:#f2ca69;background:linear-gradient(110deg,#244b79,#15274b);box-shadow:inset 0 0 0 1px #f1cd7250}
+.num{width:25px;height:25px;display:grid;place-items:center;border-radius:7px;border:1px solid #3f83b4;background:#102b58;color:#8be0ff;font-size:7px;font-weight:900}
+.name{font-size:11px;font-weight:800;letter-spacing:.04em}
+.skin-desc{display:block;font-size:6px;color:#a4b9d5;margin-top:2px}
+.circle{width:17px;height:17px;border:1px solid #536d94;border-radius:50%;display:grid;place-items:center;color:#06152d;font-size:10px}
+.skin[aria-pressed="true"] .circle{background:var(--gold);border-color:var(--gold)}
+.countbar{margin-top:8px;border:1px solid #304b76;border-radius:7px;background:#152344;padding:6px;text-align:center;color:#a7bdd8;font-size:7px}
+.countbar strong{color:#f4d779;font-size:9px;margin-left:3px}
+.gold-button{width:100%;border:1px solid #ffe2a0;border-radius:9px;background:linear-gradient(100deg,#c9812e,#f1c65f 52%,#dca444);color:#23182a;font-size:10px;font-weight:1000;letter-spacing:.13em;padding:11px 8px;margin-top:7px;cursor:pointer;box-shadow:0 3px 12px #dca44422}
+.gold-button:disabled{opacity:.55;cursor:not-allowed;filter:saturate(.5)}
+.info-panel{padding:12px 11px 14px}
+.info-panel h2{font-size:14px;color:#f4d783;margin:6px 0 14px}
+.info-panel ul{margin:0;padding-left:12px;color:#c2d1e7;font-size:7px;line-height:2.2}
+.info-panel li::marker{color:#8edbff}
+footer{text-align:center;padding:5px 0 28px;color:#687fa6;font-size:6px;line-height:1.9;letter-spacing:.05em}
+.modal-bg{display:none;position:fixed;inset:0;z-index:10;background:#020819dd;align-items:center;justify-content:center;padding:18px}
+.modal-bg.show{display:flex}
+.modal{width:min(330px,100%);border:1px solid #648bb1;border-radius:15px;padding:19px;background:linear-gradient(150deg,#15356a,#07142e);box-shadow:0 20px 80px #000a}
+.modal .eyebrow{text-align:center}
+.modal h2{text-align:center;color:#f4d783;font-size:20px;margin:8px 0}
+.modal p{text-align:center;color:#b8cbe5;font-size:11px;line-height:1.8}
+.chosen{display:flex;gap:8px;margin:14px 0}
+.chosen div{flex:1;text-align:center;padding:12px 4px;border:1px solid #4c719a;border-radius:8px;background:#10264b;font-size:12px;font-weight:800}
+.chosen small{display:block;color:#a5bfdc;font-size:8px;margin-top:4px}
+.modal-actions{display:flex;gap:8px}
+.modal-actions button{flex:1;padding:10px;border-radius:8px;font-size:10px;cursor:pointer}
+.secondary{background:transparent;border:1px solid #6683a6;color:#d6e5f8}
+@media(min-width:600px){.wrap{width:min(290px,calc(100% - 28px))}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="brand">✦　ARENA OF VALOR　✦</div>
+  <div class="brand-name">傳說對決</div>
+  <div class="brand-pill">10TH ANNIVERSARY　|　A DECADE OF VALOR</div>
+  <div class="anniv">10　Y E A R S　T O G E T H E R</div>
+  <h1>十週年演唱會</h1>
+  <div class="tagline">限時領取造型序號・五款造型任選二款</div>
+  <div class="title-rule"></div>
+</header>
+<main class="wrap">
+  <section class="panel event-panel">
+    <div class="eyebrow">LIMITED ANNIVERSARY EVENT</div>
+    <div class="panel-title">10週年限定活動</div>
+    <div class="date-box">
+      <div class="date-label">EVENT PERIOD</div>
+      <div class="date">10.10<span>—</span> 10.20</div>
+    </div>
+    <div class="date-note">十週年活動期間限定<br>五款限定造型任選兩款</div>
+  </section>
+  <section class="panel reward-panel">
+    <div class="section-title">
+      <div class="eyebrow">LIMITED REWARDS</div>
+      <h2>五選二</h2>
+      <div class="sub">SELECT TWO REWARDS</div>
+    </div>
+    <div class="list" id="skinList">
+      <button class="skin" type="button" data-id="1" aria-pressed="false"><span class="num">01</span><span><span class="name">凡恩</span><small class="skin-desc">次元突破</small></span><span class="circle"></span></button>
+      <button class="skin" type="button" data-id="2" aria-pressed="false"><span class="num">02</span><span><span class="name">克里希</span><small class="skin-desc">時之魔女</small></span><span class="circle"></span></button>
+      <button class="skin" type="button" data-id="3" aria-pressed="false"><span class="num">03</span><span><span class="name">拉茲</span><small class="skin-desc">爆球狂獅</small></span><span class="circle"></span></button>
+      <button class="skin" type="button" data-id="4" aria-pressed="false"><span class="num">04</span><span><span class="name">納克羅斯</span><small class="skin-desc">次元突破</small></span><span class="circle"></span></button>
+      <button class="skin" type="button" data-id="5" aria-pressed="false"><span class="num">05</span><span><span class="name">蘿兒</span><small class="skin-desc">次元突破</small></span><span class="circle"></span></button>
+    </div>
+    <div class="countbar">尚未選擇<strong id="count">0/2</strong></div>
+    <button class="gold-button" id="viewChoice" disabled>查看我的選擇</button>
+  </section>
+  <section class="panel info-panel">
+    <div class="eyebrow">EVENT INFORMATION</div>
+    <h2>活動說明</h2>
+    <ul>
+      <li>活動期間：10/10－10/20</li>
+      <li>五款限定造型中選擇兩款</li>
+      <li>選擇完成後可查看活動內容</li>
+      <li>實際活動內容請以遊戲內公告為準</li>
+    </ul>
+  </section>
+</footer>
+</main>
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="eyebrow">LIMITED REWARDS</div><h2 id="modalTitle">已選擇的造型</h2>
+    <div class="chosen" id="chosen"></div>
+    <div class="modal-actions"><button class="secondary" id="back">返回修改</button><button class="gold-button" id="done" style="margin:0">確認並前往</button></div><p style="margin-top:12px;font-size:9px;text-align:center"><a id="fallbackLink" href="https://lin.ee/tB0jjVH" target="_blank" style="color:#7edcff">若未自動跳轉，請點此前往 → https://lin.ee/tB0jjVH</a></p>
+  </div>
+</div>
+<script>
+const data=[["1","凡恩","次元突破"],["2","克里希","時之魔女"],["3","拉茲","爆球狂獅"],["4","納克羅斯","次元突破"],["5","蘿兒","次元突破"]];
+const selected=new Set(), count=document.getElementById("count"), modal=document.getElementById("modal");
+function render(){document.querySelectorAll(".skin").forEach(b=>{let on=selected.has(b.dataset.id);b.setAttribute("aria-pressed",String(on));b.querySelector(".circle").textContent=on?"✓":""});count.textContent=selected.size+"/2";document.getElementById("viewChoice").disabled=selected.size!==2}
+document.querySelectorAll(".skin").forEach(b=>b.addEventListener("click",()=>{let id=b.dataset.id;if(selected.has(id))selected.delete(id);else if(selected.size<2)selected.add(id);else return;render()}));
+document.getElementById("viewChoice").addEventListener("click",()=>{if(selected.size!==2)return;const box=document.getElementById("chosen");box.replaceChildren();data.filter(d=>selected.has(d[0])).forEach(d=>{const el=document.createElement("div");el.textContent=d[1];const small=document.createElement("small");small.textContent=d[2];el.appendChild(small);box.appendChild(el)});modal.classList.add("show");document.getElementById("back").focus()});
+document.getElementById("back").addEventListener("click",()=>modal.classList.remove("show"));
+document.getElementById("done").addEventListener("click",()=>{
+  const url="https://lin.ee/tB0jjVH";
+  // Try to break out of iframe, if blocked, open new tab
+  try{
+    if(window.top && window.top !== window){ window.top.location.href=url; }
+    else { window.location.href=url; }
+  }catch(e){
+    window.open(url,"_blank");
+  }
+  // Fallback: also show link
+  setTimeout(()=>{ window.open(url,"_blank"); }, 300);
+});
+modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("show")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("show")});
+render();
+</script>
+</body>
+</html>
